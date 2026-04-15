@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Segretaria</title>
+  <meta name="description" content="Informativa sulla privacy dell'app Segretaria." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #666;
+      --surface: #f5f5f7;
+      --primary: #0066cc;
+      --border: #e5e5ea;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 24px 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    main { max-width: 720px; margin: 0 auto; }
+    h1 { font-size: 28px; margin: 0 0 4px; }
+    .updated { color: var(--muted); font-size: 14px; font-style: italic; margin-bottom: 24px; }
+    h2 {
+      font-size: 18px;
+      margin-top: 28px;
+      margin-bottom: 8px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    p { margin: 8px 0; }
+    ul { padding-left: 20px; }
+    li { margin: 4px 0; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .contact-box {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Informativa sulla privacy</h1>
+  <p class="updated">Ultimo aggiornamento: 15 aprile 2026</p>
+
+  <p>
+    Questa informativa descrive come l'applicazione <strong>Segretaria</strong>
+    raccoglie, utilizza e protegge i dati personali dei suoi utenti, in conformità
+    al Regolamento UE 2016/679 (GDPR) e alle linee guida Apple App Store
+    e Google Play Store.
+  </p>
+
+  <h2>1. Titolare del trattamento</h2>
+  <p>
+    Il titolare del trattamento è lo sviluppatore indipendente dell'app
+    Segretaria, contattabile all'indirizzo email
+    <a href="mailto:grazzadany@gmail.com">grazzadany@gmail.com</a>.
+  </p>
+
+  <h2>2. Dati raccolti</h2>
+  <p>Segretaria raccoglie esclusivamente i dati necessari al funzionamento del servizio:</p>
+  <ul>
+    <li><strong>Email e password</strong> (la password viene salvata solo come hash) per la creazione e l'accesso all'account.</li>
+    <li><strong>Contenuti inseriti dall'utente</strong>: spese, appuntamenti, note, promemoria, voci della lista della spesa, informazioni inserite manualmente o tramite comandi vocali.</li>
+    <li><strong>Foto degli scontrini</strong> che l'utente sceglie di caricare per l'estrazione automatica dei dati.</li>
+    <li><strong>Profilo fiscale</strong> opzionale: regime fiscale, coefficiente forfait, partita IVA, per il calcolo automatico della deducibilità.</li>
+    <li><strong>Appartenenza a famiglie</strong> (household) per la condivisione di spese e lista della spesa con altri utenti invitati.</li>
+    <li><strong>Token OAuth Gmail</strong> se l'utente abilita l'importazione automatica delle ricevute da email. Il token è conservato esclusivamente nel Keychain iOS / Keystore Android del dispositivo e non viene mai trasmesso ai nostri server.</li>
+    <li><strong>Token per notifiche push</strong> per l'invio di promemoria.</li>
+  </ul>
+  <p>
+    Non raccogliamo dati di analytics, tracking pubblicitario, identificatori
+    di dispositivo né informazioni sulla posizione.
+  </p>
+
+  <h2>3. Finalità del trattamento</h2>
+  <p>I dati sono utilizzati esclusivamente per:</p>
+  <ul>
+    <li>Fornire le funzionalità di gestione personale (spese, agenda, note, lista della spesa).</li>
+    <li>Calcolare la deducibilità fiscale delle spese in base al regime dichiarato.</li>
+    <li>Generare insights personalizzati sulle abitudini di spesa tramite intelligenza artificiale.</li>
+    <li>Sincronizzare i dati tra i dispositivi dello stesso utente e tra i membri della stessa famiglia.</li>
+    <li>Inviare promemoria e notifiche che l'utente ha configurato.</li>
+  </ul>
+  <p>
+    <strong>Non vendiamo, affittiamo o condividiamo i dati personali con terzi a fini
+    commerciali, pubblicitari o di marketing.</strong>
+  </p>
+
+  <h2>4. Terze parti coinvolte</h2>
+  <p>Per funzionare, Segretaria si appoggia ai seguenti fornitori:</p>
+  <ul>
+    <li>
+      <strong>Supabase</strong> (PostgreSQL in cloud, infrastruttura europea):
+      archiviazione dei dati applicativi e autenticazione. Crittografia a riposo e in transito.
+      Row-Level Security attiva: ogni utente può accedere soltanto ai propri dati.
+      <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Privacy Supabase</a>.
+    </li>
+    <li>
+      <strong>Anthropic (Claude API)</strong>: elaborazione dei comandi vocali, analisi OCR
+      degli scontrini, generazione degli insights. I contenuti vengono inviati via HTTPS
+      a server Anthropic (USA) solo per il tempo strettamente necessario all'elaborazione.
+      Secondo i termini commerciali di Anthropic, i dati non vengono utilizzati per
+      addestrare i modelli.
+      <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Privacy Anthropic</a>.
+    </li>
+    <li>
+      <strong>Google (Gmail API)</strong>: se l'utente abilita l'importazione delle ricevute
+      da email, l'app legge con permesso esplicito le email marcate come ricevute di acquisto.
+      Nessuna email viene trasmessa ai nostri server: vengono analizzate direttamente dal
+      dispositivo e il solo risultato (importo, venditore, data) viene salvato come spesa.
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Google</a>.
+    </li>
+    <li>
+      <strong>Apple / Google push notifications</strong>: invio di notifiche pianificate
+      tramite APNs (iOS) e FCM (Android). Nessun dato personale è contenuto nel payload.
+    </li>
+  </ul>
+
+  <h2>5. Base giuridica</h2>
+  <p>Il trattamento si fonda su:</p>
+  <ul>
+    <li>Il <strong>consenso esplicito</strong> dell'utente (art. 6.1.a GDPR), prestato al momento della registrazione e dell'attivazione delle singole funzionalità.</li>
+    <li>L'<strong>esecuzione del contratto di servizio</strong> (art. 6.1.b GDPR) necessaria per fornire le funzionalità richieste.</li>
+  </ul>
+
+  <h2>6. Conservazione dei dati</h2>
+  <p>
+    I dati restano memorizzati finché l'account resta attivo. Alcune voci marcate come
+    temporanee possono essere cancellate automaticamente dopo 30 giorni. L'utente può
+    in qualsiasi momento esportare o cancellare tutti i propri dati dalla schermata
+    "Privacy e dati" dell'app.
+  </p>
+
+  <h2>7. Cancellazione dell'account</h2>
+  <p>
+    <strong>L'utente può cancellare in qualsiasi momento l'intero account e tutti
+    i dati collegati direttamente dall'app</strong>, senza dover contattare assistenza,
+    dal menu <em>Impostazioni → Privacy e dati → Cancella account</em>.
+    La cancellazione è <strong>definitiva e irreversibile</strong> e comprende:
+  </p>
+  <ul>
+    <li>Tutte le voci (spese, appuntamenti, note, liste della spesa).</li>
+    <li>I profili fiscali.</li>
+    <li>Le foto degli scontrini archiviate.</li>
+    <li>Le famiglie di cui l'utente è l'unico membro.</li>
+    <li>L'utente nel sistema di autenticazione.</li>
+    <li>I token di accesso locali (incluso il token Gmail nel Keychain).</li>
+  </ul>
+
+  <h2>8. Diritti dell'interessato</h2>
+  <p>Ai sensi del GDPR, ogni utente ha diritto a:</p>
+  <ul>
+    <li>Accesso ai propri dati (art. 15).</li>
+    <li>Rettifica dei dati inesatti (art. 16).</li>
+    <li>Cancellazione — diritto all'oblio (art. 17).</li>
+    <li>Limitazione del trattamento (art. 18).</li>
+    <li>Portabilità in formato strutturato JSON (art. 20).</li>
+    <li>Opposizione al trattamento (art. 21).</li>
+    <li>Reclamo al Garante per la Protezione dei Dati Personali.</li>
+  </ul>
+  <p>
+    Le funzioni di esportazione e cancellazione sono disponibili direttamente
+    nell'app. Per ogni altra richiesta è possibile contattare l'indirizzo email
+    riportato a fondo pagina.
+  </p>
+
+  <h2>9. Sicurezza</h2>
+  <p>
+    I dati sono memorizzati su infrastruttura Supabase con crittografia a riposo e in transito (TLS).
+    L'accesso è protetto da autenticazione con token JWT e policy Row-Level Security
+    che garantiscono che un utente non possa mai leggere i dati di un altro.
+    I token sensibili (sessione, OAuth Gmail) sono archiviati nel Keychain iOS /
+    Keystore Android, protetti dal sistema operativo.
+  </p>
+
+  <h2>10. Minori</h2>
+  <p>
+    Il servizio non è destinato a minori di 16 anni. Se un genitore ritiene che il proprio
+    figlio abbia creato un account, può contattarci per la rimozione immediata.
+  </p>
+
+  <h2>11. Modifiche all'informativa</h2>
+  <p>
+    Eventuali aggiornamenti sostanziali a questa informativa saranno comunicati
+    in app con un avviso al primo avvio successivo. L'uso continuato del servizio
+    dopo la modifica implica l'accettazione dei nuovi termini.
+  </p>
+
+  <h2>12. Avvertenza sui calcoli fiscali</h2>
+  <p>
+    I calcoli di deducibilità forniti dall'app hanno carattere puramente informativo
+    e <strong>non costituiscono consulenza fiscale professionale</strong>. Per ogni
+    decisione con rilievo fiscale si raccomanda di consultare un commercialista abilitato.
+  </p>
+
+  <div class="contact-box">
+    <strong>Contatti</strong><br />
+    Per qualsiasi domanda o richiesta relativa al trattamento dei dati personali:
+    <br />
+    <a href="mailto:grazzadany@gmail.com">grazzadany@gmail.com</a>
+  </div>
+
+  <div class="footer">
+    © 2026 Segretaria · <a href="mailto:grazzadany@gmail.com">Contatti</a>
+  </div>
+</main>
+</body>
+</html>
