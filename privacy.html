@@ -58,7 +58,7 @@
 <body>
 <main>
   <h1>Informativa sulla privacy</h1>
-  <p class="updated">Ultimo aggiornamento: 15 aprile 2026</p>
+  <p class="updated">Ultimo aggiornamento: 27 aprile 2026</p>
 
   <p>
     Questa informativa descrive come l'applicazione <strong>Segretaria</strong>
@@ -82,7 +82,8 @@
     <li><strong>Foto degli scontrini</strong> che l'utente sceglie di caricare per l'estrazione automatica dei dati.</li>
     <li><strong>Profilo fiscale</strong> opzionale: regime fiscale, coefficiente forfait, partita IVA, per il calcolo automatico della deducibilità.</li>
     <li><strong>Appartenenza a famiglie</strong> (household) per la condivisione di spese e lista della spesa con altri utenti invitati.</li>
-    <li><strong>Token OAuth Gmail</strong> se l'utente abilita l'importazione automatica delle ricevute da email. Il token è conservato esclusivamente nel Keychain iOS / Keystore Android del dispositivo e non viene mai trasmesso ai nostri server.</li>
+    <li><strong>Token OAuth Gmail</strong> se l'utente abilita l'importazione automatica delle ricevute da email. Il token è conservato esclusivamente nel Keychain iOS / Keystore Android del dispositivo e non viene mai trasmesso ai nostri server Supabase.</li>
+    <li><strong>Token OAuth Microsoft / Outlook</strong> (access token + refresh token per accesso offline) se l'utente abilita l'integrazione Outlook. Conservato esclusivamente nel Keychain iOS / Keystore Android del dispositivo.</li>
     <li><strong>Token per notifiche push</strong> per l'invio di promemoria.</li>
   </ul>
   <p>
@@ -124,9 +125,18 @@
     <li>
       <strong>Google (Gmail API)</strong>: se l'utente abilita l'importazione delle ricevute
       da email, l'app legge con permesso esplicito le email marcate come ricevute di acquisto.
-      Nessuna email viene trasmessa ai nostri server: vengono analizzate direttamente dal
-      dispositivo e il solo risultato (importo, venditore, data) viene salvato come spesa.
+      Il testo delle email selezionate viene inviato all'API Anthropic (USA) per l'estrazione
+      automatica dei dati (importo, venditore, data). Il solo risultato estratto viene salvato
+      nell'app. Nessuna email viene trasmessa ai nostri server Supabase.
       <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Google</a>.
+    </li>
+    <li>
+      <strong>Microsoft (Outlook / Microsoft 365)</strong>: se l'utente abilita l'integrazione
+      Outlook, l'app accede con permesso esplicito alle email di acquisto tramite Microsoft
+      Graph API. Il testo delle email selezionate viene inviato all'API Anthropic (USA) per
+      l'estrazione dei dati. Il token di accesso (incluso il refresh token per l'accesso
+      offline) è conservato esclusivamente nel Keychain iOS / Keystore Android del dispositivo.
+      <a href="https://privacy.microsoft.com/it-it/privacystatement" target="_blank" rel="noopener">Privacy Microsoft</a>.
     </li>
     <li>
       <strong>Apple / Google push notifications</strong>: invio di notifiche pianificate
@@ -206,9 +216,22 @@
 
   <h2>12. Avvertenza sui calcoli fiscali</h2>
   <p>
-    I calcoli di deducibilità forniti dall'app hanno carattere puramente informativo
-    e <strong>non costituiscono consulenza fiscale professionale</strong>. Per ogni
-    decisione con rilievo fiscale si raccomanda di consultare un commercialista abilitato.
+    I calcoli di deducibilità e detraibilità forniti dall'app hanno carattere puramente
+    informativo e <strong>non costituiscono consulenza fiscale professionale</strong>.
+    Per ogni decisione con rilievo fiscale si raccomanda di consultare un commercialista
+    abilitato. I report e i CSV esportati sono promemoria di supporto per CAF e
+    commercialisti, <strong>non documenti ufficiali</strong> e non sostituiscono la
+    dichiarazione dei redditi né i documenti originali richiesti dall'Agenzia delle Entrate.
+  </p>
+
+  <h2>13. Conservazione dei documenti (archivio scontrini)</h2>
+  <p>
+    L'app offre un archivio digitale di consultazione per le foto degli scontrini,
+    con periodi di retention indicativi (es. 7 anni per spese IRPEF, 30 giorni per
+    scontrini temporanei). <strong>Questo archivio non sostituisce la conservazione
+    legale degli originali</strong>, che rimane obbligatoria ai sensi delle norme
+    tributarie italiane. In caso di controllo da parte dell'Agenzia delle Entrate,
+    l'utente è tenuto a esibire i documenti originali cartacei o elettronici.
   </p>
 
   <div class="contact-box">
