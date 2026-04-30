@@ -58,7 +58,7 @@
 <body>
 <main>
   <h1>Informativa sulla privacy</h1>
-  <p class="updated">Ultimo aggiornamento: 27 aprile 2026</p>
+  <p class="updated">Ultimo aggiornamento: 30 aprile 2026</p>
 
   <p>
     Questa informativa descrive come l'applicazione <strong>Segretaria</strong>
@@ -116,11 +116,24 @@
     </li>
     <li>
       <strong>Anthropic (Claude API)</strong>: elaborazione dei comandi vocali, analisi OCR
-      degli scontrini, generazione degli insights. I contenuti vengono inviati via HTTPS
-      a server Anthropic (USA) solo per il tempo strettamente necessario all'elaborazione.
-      Secondo i termini commerciali di Anthropic, i dati non vengono utilizzati per
-      addestrare i modelli.
+      degli scontrini, generazione degli insights, parsing delle email di acquisto e
+      estrazione delle transazioni dai PDF degli estratti conto. I contenuti vengono
+      inviati via HTTPS a server Anthropic (USA) solo per il tempo strettamente necessario
+      all'elaborazione. Secondo i termini commerciali di Anthropic, i dati non vengono
+      utilizzati per addestrare i modelli.
       <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Privacy Anthropic</a>.
+      <br /><br />
+      <strong>⚠ Dati particolari (art. 9 GDPR) — scontrini di farmacia e salute:</strong>
+      le foto di scontrini di farmacia o strutture sanitarie possono contenere informazioni
+      relative allo stato di salute (medicinali, prescrizioni). Inviando la foto di tali
+      scontrini all'AI, l'utente acconsente esplicitamente al trattamento di questa
+      categoria di dati da parte di Anthropic, ai soli fini dell'estrazione automatica
+      dell'importo e della categoria di spesa.
+      <br /><br />
+      <strong>PDF estratto conto bancario:</strong> se l'utente importa un PDF dell'estratto
+      conto, il contenuto del documento (inclusi movimenti bancari, IBAN parziali e causali)
+      viene inviato all'API Anthropic (USA) per l'estrazione delle transazioni. Il PDF
+      non viene conservato sui server Supabase.
     </li>
     <li>
       <strong>Google (Gmail API)</strong>: se l'utente abilita l'importazione delle ricevute
